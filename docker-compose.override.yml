@@ -14,6 +14,11 @@ services:
       APP_ENV: dev
 
   caddy:
+    environment: []
+      # Comment out the following line to use the local TLS certificates
+      # CADDY_TLS_CONFIG: "tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key"
     volumes:
+      # Comment out the following volume enable the caddy/certs volume, needed when CADDY_TLS_CONFIG is in use
+      # - ./docker/caddy/certs:/etc/caddy/certs:ro
       - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./public:/srv/app/public:ro

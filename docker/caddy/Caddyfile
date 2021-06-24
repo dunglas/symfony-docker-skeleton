@@ -11,6 +11,8 @@
 
 {$SERVER_NAME}
 
+{$CADDY_TLS_CONFIG}
+
 log
 
 route {
